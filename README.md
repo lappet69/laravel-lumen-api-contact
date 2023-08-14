@@ -1,24 +1,51 @@
-# Lumen PHP Framework
+# Application Starter
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/lumen)](https://packagist.org/packages/laravel/lumen-framework)
+First clone the repository
+```bash
+git clone https://github.com/lappet69/laravel-lumen-api-contact.git
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+cd laravel-lumen-api-contact
 
-## Official Documentation
+composer install
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+```
+## Setup Environment
 
-## Contributing
+Copy `.env.example` to `.env` for your app, specifically the baseURL
+and database settings.
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+php artisan key:generate
 
-## Security Vulnerabilities
+```
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+## DB Configuration
+make sure your database configuration in .env is correct
 
-## License
+then run the following command
+```bash
+php artisan migrate
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+php artisan db:seed --class=ContactSeeder
+
+```
+
+## Run application
+
+```bash
+php artisan serve
+
+or
+
+php -S localhost:8000 -t public
+
+```
+
+
+## Laravel Lumen
+Documentation for the framework can be found on the [Lumen Website]
+
+
+
+
+[Lumen Website]:https://lumen.laravel.com/docs/
